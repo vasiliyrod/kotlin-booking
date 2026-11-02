@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/migrations/01_BED-183_init.sql
+  - include:
+      file: liquibase/migrations/03_BED-183_authentication.sql
+  - include:
+      file: liquibase/migrations/04_BED-183_booking_check_create.sql
