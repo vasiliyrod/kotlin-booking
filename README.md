@@ -2,7 +2,7 @@
 
 REST API для бронирования номеров в отеле: регистрация гостей, поиск свободных комнат на даты, создание и изменение бронирований, разграничение доступа по ролям (PUBLIC / USER / ADMIN).
 
-Написано на **Kotlin** без веб-фреймворка — HTTP-слой построен вручную поверх встроенного в JDK `com.sun.net.httpserver` (свой `Router` и `DispatcherHandler`). Данные хранятся в **PostgreSQL**, доступ к БД — через **Spring JDBC** с пулом соединений **HikariCP**, миграции — **Liquibase**. Аутентификация — **JWT** с парами access/refresh токенов (refresh передаётся через `httpOnly` cookie). Сериализация JSON — **kotlinx.serialization**, конфигурация — через `.env` (dotenv-kotlin), логирование — **logback** + kotlin-logging. Тесты — юнит (MockK) и интеграционные с реальной БД в **Testcontainers**.
+Написано на **Kotlin** без веб-фреймворка — слой контроллеров построен вручную поверх встроенного в JDK `com.sun.net.httpserver` (свой `Router` и `DispatcherHandler`). Вручную реализована аутентификация и авторизация через JWT access/refresh токены. Данные хранятся в **PostgreSQL**, доступ к БД — через **Spring JDBC** с пулом соединений **HikariCP**, миграции — **Liquibase**. Сериализация JSON — **kotlinx.serialization**, конфигурация — через `.env` (dotenv-kotlin), логирование — **logback** + kotlin-logging. Тесты — юнит (MockK) и интеграционные с реальной БД в **Testcontainers**.
 
 ## Запуск
 
